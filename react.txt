@@ -1,0 +1,211 @@
+                           REACT - Front End Technology
+                           ----------------------------
+
+
+                           Basic Commands
+                  --------------------------------
+
+        1. To create react project : npx create-react-app project-name    
+        2. To run React : npm start
+        3. To generate node module : npm install (if not available)(project doesnot run without node modules)
+        4. To install Material UI : npm install @mui/material @emotion/react @emotion/styled
+         - Material UI :
+                Material UI is a library of React UI components that implements Google's Material Design.
+        
+        5. To install React Bootstrap : npm install react-bootstrap bootstrap
+         - Include bootstrap theme from bootswatch.com to use bootstrap.min.css
+        6. To install react-router-dom library : npm i react-router-dom
+        7. To install react-toastify library : npm i react-toastify
+
+                           Basic Features & Concepts
+                ------------------------------------------------
+
+        
+        - Is a collection of Js Libraries: Used to design UI
+        - Creating a Single Page Application : GMAIL, FACEBOOK, X
+        - Declarative Approach: Developers describe how the user interface should look based on its current state, and React takes care of updating the DOM (Document Object Model) accordingly.
+
+        - Immutable & Mutable
+        - Pure Functions : Functions accept immutable objects and return a new object - It didnot cause any side effect : Example - React Components
+
+        - Virtual DOM : A programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+
+        - JSX (Javascript XML) - Combination of Javascript and HTML : const heading = <h1>heading 1</h1>
+        - Transpling : JSX to (HTML,CSS,JAVASCRIPT) - using Babel library
+         
+            - JSX expression must have a parent element 
+            - React fragments : <> </> similar to <div> </div>
+            - Changes in Attribute : always use camel letters 
+                
+                - class become className
+                - for become htmlFor
+            - To display JS expression in JSX : place js expression inside a {}
+
+            - To style use Inline styling in component - where css property should be in camel case in an object
+            - Every jsx elements have closing tag 
+            - Tag without contents can be represented as self closing tags : <tag/>
+            
+
+        - Create react app using create-react-app command
+        - Components : Small part of a User Interface(UI), React app is a collection of components, they are arranged as a tree structure with parent/start node as 'App' Component
+           - Component is a js/jsx file, with filename & component name will start with capital letter, it will always return HTML
+
+              - Different ways to create components
+                
+                  - Functional/stateless Components
+                  - Class based/stateful components
+
+              - High Order Component (HOC) : Component as a Component Argument and returns a jsx/component
+
+                  Shortcuts to create components
+                
+                             - rfce (react function component extends)
+                             - rcc (react class component)
+
+        - Data Sharing in React Component : One way binding - Parent to child 
+
+                - Using props : property of Component
+
+                     - It is an object
+                     - Child can access shared data from its Function argument via props
+
+        - Style React Components
+
+                - Inline Styling
+                - External Styling
+                - CSS Module : file with a extension of .module.css
+
+        - React Events
+
+                - Without argument function : Events bind using its function name only  
+                - With argument function : Events bind using arrow function
+                - With event object as argument : Events bind using arrow function with argument as event   
+
+        - Conditional Rendering :  Process of displaying different content based on certain conditions or states. 
+
+                - if statements : && operator
+                - if-else statements : ?: Ternary operator
+
+        - React state : Built in Object of React Component(By default, only for class based component)
+                
+                - It will store property of Components
+                - State Changes then it re-render the Component : use setState function
+        
+        - Render - Rendering is the process used to show the output of markup and code to the user in the browser. 
+
+        - React Component Life Cycle
+
+                - Mounting Phase : Putting all elements into DOM
+
+                          - constructor()
+                          - getDerivedStateFromProps()
+                          - render()
+                          - componentDidMount()
+
+                - Updating Phase : Component Updating
+                          
+                          - getDerivedStateFromProps()
+                          - shouldComponentUpdate()
+                          - render()
+                          - getSnapshotBeforeUpdate()
+                          - componentDidUpdate()
+
+                - Unmounting phase : removing element from DOM
+                          
+                          - componentWillUnmount()
+
+        - React Hooks : for making Functional Component to use react Features (eg: state,life cycle) 
+               hook:- Function or Predefinedfunction
+
+                - Import hook, and to use call the hook inside the component
+                - Rules for hook:
+
+                          - Can used only in Functional Component
+                          - It can only called at the top level of Component 
+                          - Hooks are not Conditional                 
+                
+                - Different type of Hooks
+                        
+                          - Predefined Hooks
+                                   
+                                   - useState(initial-value) : Return state and function for Updating State
+                                   
+                                   - useEffect Hook : The useEffect Hook allows you to perform side effects in your components.
+                                        
+                                        - Syntax :- useEffect(<function>, <dependency>)
+
+                                        - No dependency argument : useEffect runs on every render.
+
+                                        - An empty array : Runs only on the first render.
+
+                                        - Props or State value : Runs on the first render, And any time any dependency value changes
+
+                                   - useNavigate : Redirect one page to another
+
+                          - Custom Hooks
+
+                - DIfference between Functional and class based component
+
+                     Functional Component                           Class based Component
+                ------------------------------                  ------------------------------
+
+                1.JS pure function accept props as               1. A class extended from react component
+                  argument and return jsx (react elements)           and render a function and return jsx
+                                                                     (react elements)
+
+                2.No need of render function                     2. Need render function to return jsx
+
+                3.Run code from top to bottom,once               3. Component alive depending on the 
+                jsx return it cannot be alive                       life cycle phase
+
+                4.Stateless Component                            4. Stateful component
+
+                5.Hooks are used                                 5. No need to use hook
+
+                6.Constructor is not used                        6. Use constructor to initialise
+                                                                    the state
+
+                7.Life Cycle methods like componentDidMount      7. Can use Life Cycle methods inside 
+                  is not used                                       component
+
+
+                - Rendering List : use map method
+
+                - React Form :
+
+                          - Form handled by component
+
+                          - preventDefault() - method cancels the event if it is cancelable
+
+                          - Types of components
+                              - controlled component - managed by react component
+                              - uncontrolled component - managed by DOM
+                
+                
+                - API call - In React,
+                               
+                               - Using Axios library :- it returns promise
+
+                                    - create a new instance of axios with a custom config(if multiple http requests are calling into base url)
+                                         
+                                    - Axios is a promise-based HTTP Client for node.js and the browser.
+
+                                    - It is isomorphic (= it can run in the browser and nodejs with the same basecode)
+
+                - Routing/set up path for component in React
+
+                            - Use react-router-dom library
+                               
+                                   - Entire application should be in BrowserRouter
+
+                                   - Place all component needed to set up path inside Routes in App Components
+
+                                   - To set up path for component use Route in inside Routes
+
+                            - Link :
+                                   - Used to redirect from one page to another page without reloading
+
+                            - useNavigate Hook :
+                                 
+                                   - redirection
+                            
